@@ -138,6 +138,17 @@ function isWhat(n) {
 
 // 11. Tower of Hanoi
 
-function towerOfHanoi(rods, disks){
-  
+function towerOfHanoi(disks, start, dest, temp){
+    if(disks >= 1){
+        towerOfHanoi(disks-1, start, temp, dest);
+        console.log(`disk from ${start} to ${dest}`);
+        towerOfHanoi(disks-1, temp, dest, start);
+    }
+return;
 }
+//  O(n) 
+
+towerOfHanoi(4, "1", "3", "2");
+
+
+
